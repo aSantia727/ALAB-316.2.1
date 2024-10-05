@@ -13,7 +13,7 @@
 //     console.log(23)
 // };
 
-const secretNumber = Math.trunc(Math.random( ) * 100) + 1;
+const secretNumber = Math.trunc((Math.random( ) * 100) + 1);
 
 let score = 20;
 
@@ -27,10 +27,14 @@ document.querySelector('.check').addEventListener('click', function(){
     } else if (guess === secretNumber){
         document.querySelector('.message').textContent =
         'Winner!!!'
+
+        document.querySelector('body').style.backgroundColor = 'green';
+        document.querySelector('.number').style.width = '30rem';
+        
     } else if (guess > secretNumber){
         if(score > 0){
         document.querySelector('.message').textContent =
-        'Too high!';
+        'Too high!', console.log(secretNumber);
         score--;
         document.querySelector('.score').textContent =
         score;
@@ -42,7 +46,7 @@ document.querySelector('.check').addEventListener('click', function(){
         }
     } else if (guess < secretNumber){
         document.querySelector('.message').textContent = 
-        "Too Law!"
+        "Too Low!"
     }   score--
     document.querySelector('.score').textContent =
     score;
